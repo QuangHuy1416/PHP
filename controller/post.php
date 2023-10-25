@@ -12,7 +12,14 @@ if($pos == false)
 }
 else
 {
-    $id = $_GET['id'];
-    $posts = $db->query("select * from post where id = ?",[$id])->fetch();
+    $post = $db->query("select * from post where id = ?",[$_GET['id']])->fetch();
+    if(!$post)
+    {
+        abort();
+    }
+    if($post['user_id'] !== "1")
+    {
+        abort(403);
+    }
     require "../view/post.view.php";
 }
