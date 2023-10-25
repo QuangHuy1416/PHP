@@ -7,19 +7,12 @@ $pos = strpos($uri, "id");
 
 if($pos == false)
 {
-    $posts = $db->query("select * from post")->fetchAll();
+    $posts = $db->query("select * from post")->get();
     require "../view/posts.view.php";
 }
 else
 {
-    $post = $db->query("select * from post where id = ?",[$_GET['id']])->fetch();
-    if(!$post)
-    {
-        abort();
-    }
-    if($post['user_id'] !== "1")
-    {
-        abort(403);
-    }
+    $post = $db->query("select * from post where id = ?",[$_GET['id']])->findOrFail();
+    authorized($post['user_id'] === "1");
     require "../view/post.view.php";
 }
