@@ -1,2 +1,2 @@
 <?php
-require "view/product.view.php";
+require "../view/product.view.php";

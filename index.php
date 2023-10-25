@@ -1,15 +1,17 @@
 <?php
-//require "route.php";
-require "functions.php";
-// Tạo liên kết đến MySQL
-try {
-    //$dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass);
-    $connection = "mysql:host=localhost;post=3307;dbname=test;user=root;charset=utf8mb4";
-    $pdo = new PDO($connection);
-    $statement = $pdo->prepare("select * from post");
-    $statement->execute();
-    $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-    DumAndDie($posts);
-} catch (PDOException $e) {
-    // attempt to retry the connection after some timeout for example
-}
+require "controller/route.php";
+// require "functions.php";
+// require "database.php";
+// $config = require "config.php";
+// // Tạo biến kết nối cơ sở dữ liệu
+// $db = new Database($config);
+
+// $id = $_GET['id'];
+// // Thực hiện query, fetch là chỉ xuất phần tử đầu tiên, fetchAll là xuất ra tất cả
+// $query = "select * from post where id = ?";
+// // Cách xử lý lỗi bảo mật sql
+// $posts = $db->query($query,[$id])->fetch();
+
+// echo "<li>" . $posts['post'] . "</li>";
+
+

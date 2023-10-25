@@ -1,9 +1,10 @@
 <?php
 $uri = parse_url($_SERVER["REQUEST_URI"])['path'];
 $routes = [
-    "/" => "controller/index.php",
-    "/product" => "controller/product.php",
-    "/cart" => "controller/cart.php"
+    "/" => "index.php",
+    "/product/" => "product.php",
+    "/cart/" => "cart.php",
+    "/post/" => "post.php"
 ];
 
 if(array_key_exists($uri,$routes))

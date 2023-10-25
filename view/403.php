@@ -1,8 +1,8 @@
 <?php 
     require "basic/head.php";
     require "basic/nvar.php";
-    $heading = "Home";
-    $content = "Welcome to Home";
+    $heading = "You are not authorized to view this page!";
+    $content = "403.";
     require "basic/body.php";
 ?>
 
