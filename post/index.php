@@ -1,2 +1,2 @@
 <?php
-require "../controller/route.php";
+require_once "../controller/route.php";

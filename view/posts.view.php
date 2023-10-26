@@ -1,8 +1,8 @@
 <?php 
-    require "basic/head.php";
-    require "basic/nvar.php";
+    require_once "basic/head.php";
+    require_once "basic/nvar.php";
     $heading = "Posts";
-    require "basic/body.php";
+    require_once "basic/body.php";
 ?>
 
 <main>
@@ -11,16 +11,16 @@
             <?php foreach($posts as $post) : ?>
                 <li>
                     <a href="/post?id=<?= $post['id'] ?>">    
-                        <?= $post['post'] ?>
+                        <?= htmlspecialchars($post['post']) ?>
                     </a>
                 </li>
             <?php endforeach; ?>
         </ul>
         <p>
-            <a href="post-create.view.php" class="text-blue-500 hover:underline">
+            <a href="/view/post-create.view.php" class="text-blue-500 hover:underline">
                 Create post.
             </a>
         </p>
     </div>
 </main>
-<?php require "basic/footer.php"; ?>
+<?php require_once "basic/footer.php"; ?>

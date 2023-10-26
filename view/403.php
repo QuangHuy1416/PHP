@@ -1,9 +1,9 @@
 <?php 
-    require "basic/head.php";
-    require "basic/nvar.php";
+    require_once "basic/head.php";
+    require_once "basic/nvar.php";
     $heading = "You are not authorized to view this page!";
     $content = "403.";
-    require "basic/body.php";
+    require_once "basic/body.php";
 ?>
 
 <main>
@@ -13,4 +13,4 @@
         </h1>
     </div>
 </main>
-<?php require "basic/footer.php"; ?>
+<?php require_once "basic/footer.php"; ?>

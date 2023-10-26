@@ -1,5 +1,5 @@
 <?php
-    require "response.php";
+    require_once "response.php";
     function DumAndDie($value)
     {
         echo "<pre>";
