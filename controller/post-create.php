@@ -5,13 +5,10 @@ $method = $_SERVER['REQUEST_METHOD'] ;
 if( $method === "POST")
 {
     $err = [];
-    if(strlen( $_POST['post']) === 0 )
+    
+    if(! Validator::string( $_POST['post'], 1,1000) )
     {
-        $err['post'] = "A post is required.";
-    }
-    else if(strlen( $_POST['post']) > 1000 )
-    {
-        $err['post'] = "A post can not more than 1000 character.";
+        $err['post'] = "A post can not more than 1000 character is required.";
     }
     if(empty($err))
     {
