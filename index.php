@@ -1,5 +1,5 @@
 <?php
-require "controller/route.php";
+require_once "controller/route.php";
 // require "functions.php";
 // require "database.php";
 // $config = require "config.php";

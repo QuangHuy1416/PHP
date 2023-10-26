@@ -1,4 +1,5 @@
 <?php
+    require "response.php";
     function DumAndDie($value)
     {
         echo "<pre>";
