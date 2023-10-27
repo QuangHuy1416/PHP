@@ -1,7 +1,8 @@
 <?php 
-    view("basic/head.php");
-    view("basic/nvar.php");
-    view("basic/body.php",['heading' => 'Create']);
+    require "../basic/head.php";
+    require "../basic/nvar.php";
+    $heading = 'Create';
+    require "../basic/body.php";
 ?>
 
 <main>
@@ -47,4 +48,4 @@
         </form>
     </div>
 </main>
-<?php view("basic/footer.php"); ?>
+<?php require "../basic/footer.php"; ?>
