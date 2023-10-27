@@ -1,13 +1,12 @@
 <?php 
-    require "basic/head.php";
-    require "basic/nvar.php";
-    $heading = "Create";
-    require "basic/body.php";
+    view("basic/head.php");
+    view("basic/nvar.php");
+    view("basic/body.php",['heading' => 'Create']);
 ?>
 
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <form action="../controller/post-create.php" method="POST">
+        <form action="/../../controller/posts/post-create.php" method="POST">
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -48,4 +47,4 @@
         </form>
     </div>
 </main>
-<?php require_once "basic/footer.php"; ?>
+<?php view("basic/footer.php"); ?>

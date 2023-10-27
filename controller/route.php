@@ -5,7 +5,7 @@ $routes = [
     "/" => "index.php",
     "/product/" => "product.php",
     "/cart/" => "cart.php",
-    "/post/" => "post.php",
+    "/post/" => "posts/post.php",
 ];
 
 if(array_key_exists($uri,$routes))

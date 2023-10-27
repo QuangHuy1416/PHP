@@ -1,5 +1,6 @@
 <?php
-require_once "../data/connection.php";
+require_once __DIR__ . "/../../data/connection.php";
+require_once __DIR__ . "/../../data/validator.php";
 $heading = "Create post";
 $method = $_SERVER['REQUEST_METHOD'] ;
 if( $method === "POST")
@@ -19,6 +20,6 @@ if( $method === "POST")
         require_once "post.php";
     }
     else{
-        require_once "../view/post-create.view.php";
+        view("posts/post-create.view.php");
     }
 }

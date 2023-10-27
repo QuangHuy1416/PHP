@@ -1,8 +1,7 @@
 <?php 
-    require_once "basic/head.php";
-    require_once "basic/nvar.php";
-    $heading = "Posts";
-    require_once "basic/body.php";
+    view("basic/head.php");
+    view("basic/nvar.php");
+    view("basic/body.php",['heading' => 'Posts']);
 ?>
 
 <main>
@@ -11,4 +10,4 @@
         <a href="/post"> Back</a>
     </div>
 </main>
-<?php require_once "basic/footer.php"; ?>
+<?php view("basic/footer.php"); ?>

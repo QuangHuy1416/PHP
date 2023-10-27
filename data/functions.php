@@ -20,3 +20,16 @@
             abort($status);
         }
     }
+
+    function basePath($path)
+    {
+        
+        return BASE_PATH . $path;
+    }
+
+    function view($path, $attribute = [])
+    {
+        extract($attribute);
+        //$posts = $value;
+        require_once basePath('view/' . $path);
+    }

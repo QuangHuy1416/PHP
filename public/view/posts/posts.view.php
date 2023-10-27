@@ -1,8 +1,7 @@
 <?php 
-    require_once "basic/head.php";
-    require_once "basic/nvar.php";
-    $heading = "Posts";
-    require_once "basic/body.php";
+    view("basic/head.php");
+    view("basic/nvar.php");
+    view("basic/body.php",['heading' => 'Post']);
 ?>
 
 <main>
@@ -17,10 +16,10 @@
             <?php endforeach; ?>
         </ul>
         <p>
-            <a href="/view/post-create.view.php" class="text-blue-500 hover:underline">
+            <a href="/view/posts/post-create.view.php" class="text-blue-500 hover:underline">
                 Create post.
             </a>
         </p>
     </div>
 </main>
-<?php require_once "basic/footer.php"; ?>
+<?php view("basic/footer.php"); ?>

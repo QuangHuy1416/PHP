@@ -1,2 +1,2 @@
 <?php
-require_once "../view/cart.view.php";
+view("cart.view.php");
