@@ -1,7 +1,8 @@
 <?php 
     view("basic/head.php");
     view("basic/nvar.php");
-    view("basic/body.php",['heading' => 'You are not authorized to view this page!', 'content' => '403']);
+    view("basic/body.php",['heading' => 'You are not authorized to view this page!']);
+    $content = '403.';
 ?>
 
 <main>

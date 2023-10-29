@@ -2,16 +2,30 @@
 require_once __DIR__ . "/../../data/connection.php";
 $uri = $_SERVER["REQUEST_URI"];
 $pos = strpos($uri, "id");
-
-if($pos == false)
+if($_SERVER["REQUEST_METHOD"] === "POST")
 {
-    $posts = $dbo->query("select * from post")->get();
-   // require_once __DIR__ . "/../../view/posts/posts.view.php";
-   view("posts/posts.view.php",['posts' => $posts]);
+    // kiểm tra có tồn tại id get được trong database hay không
+    $post = $dbo->query("select * from post where id = ?",[$_GET['id']])->findOrFail();
+    // cho phép xóa nếu có cùng user_id
+    authorized($post['user_id'] === "1");
+    $dbo->query("delete from post where id = :id",["id" => $_GET['id']]);
+    //header dùng để điều hướng trang web
+    //trong đó location: là từ khóa bắt buộc, phần sau là đường dẫn muốn trỏ tới
+    header("location: /post");
+    //exit;
 }
 else
 {
-    $post = $dbo->query("select * from post where id = ?",[$_GET['id']])->findOrFail();
-    authorized($post['user_id'] === "1");
-    view("posts/post.view.php",['post' => $post]);
+    if($pos == false)
+    {
+        $posts = $dbo->query("select * from post")->get();
+    // require_once __DIR__ . "/../../view/posts/posts.view.php";
+    view("posts/posts.view.php",['posts' => $posts]);
+    }
+    else
+    {
+        $post = $dbo->query("select * from post where id = ?",[$_GET['id']])->findOrFail();
+        authorized($post['user_id'] === "1");
+        view("posts/post.view.php",['post' => $post]);
+    }
 }

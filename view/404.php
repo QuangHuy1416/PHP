@@ -1,7 +1,8 @@
 <?php 
     view("basic/head.php");
     view("basic/nvar.php");
-    view("basic/body.php",['heading' => 'Sorrt. Not found.', 'content' => '404']);
+    view("basic/body.php",['heading' => 'Sorry. Not found.']);
+    $content = '404.';
 ?>
 
 <main>
