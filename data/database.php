@@ -6,8 +6,8 @@ class Database
     public $statement;
     public function __construct($config)
     {
-        $username = "HuyHVQ"; // Tên người dùng MySQL
-        $password = "12345"; // Mật khẩu MySQL
+        $username = "root"; // Tên người dùng MySQL
+        $password = "00Gundam#1416"; // Mật khẩu MySQL
         try {
             // Connect database
             $dsn = 'mysql:' . http_build_query($config, '', ';');
