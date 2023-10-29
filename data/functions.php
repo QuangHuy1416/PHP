@@ -1,4 +1,6 @@
 <?php
+    use data\Response;
+    
     require_once "response.php";
     function DumAndDie($value)
     {

@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . "/../../data/connection.php";
+
+// Muốn sử dụng 1 namespace trước tiên phải require hoặc include file chứa namespace đó
+// sau đó dùng từ khóa use để nạp namespace cần sử dụng
 require_once __DIR__ . "/../../data/validator.php";
+use data\Validator;
+
 $heading = "Create post";
 $method = $_SERVER['REQUEST_METHOD'] ;
 if( $method === "POST")

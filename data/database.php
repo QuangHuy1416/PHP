@@ -1,4 +1,8 @@
 <?php
+//namespace có tác dụng tạo ra định danh cho lớp một cách cụ thể hóa
+namespace data;
+use PDO;
+use PDOException;
 
 class Database
 {
