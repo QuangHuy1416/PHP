@@ -12,6 +12,7 @@ spl_autoload_register(function ($class){
 });
 
 //require_once basePath("data/route.php");
+require_once basePath('bootstrap.php');
 use data\Router;
 $routes = new Router();
 require_once basePath("routes.php");

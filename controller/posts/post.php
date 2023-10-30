@@ -1,5 +1,10 @@
 <?php
-require_once __DIR__ . "/../../data/connection.php";
+//require_once __DIR__ . "/../../data/connection.php";\
+require_once __DIR__ . "/../../bootstrap.php";
+use data\App;
+use data\Database;
+
+$dbo = App::resolve(Database::class);
 $uri = $_SERVER["REQUEST_URI"];
 $pos = strpos($uri, "id");
 

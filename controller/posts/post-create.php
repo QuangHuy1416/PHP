@@ -1,6 +1,12 @@
 <?php
-require_once __DIR__ . "/../../data/connection.php";
+//require_once __DIR__ . "/../../data/connection.php";
+//require_once __DIR__ . "/../../data/App.php";
+require_once __DIR__ . "/../../bootstrap.php";
 
+use data\App;
+use data\Database;
+
+$dbo = App::resolve(Database::class);
 require_once __DIR__ . "/../../data/validator.php";
 //use data\Validator;
 
