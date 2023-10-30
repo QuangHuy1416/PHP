@@ -4,3 +4,4 @@ $config = [
     'port' => 3306, // Cổng kết nối MySQL
     'dbname' => 'test' // Tên cơ sở dữ liệu MySQL
 ];
+?>

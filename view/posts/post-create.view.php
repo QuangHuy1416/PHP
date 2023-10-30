@@ -7,6 +7,10 @@
 
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        <!--
+        <form action="/post" method="POST">
+            <input type="hidden" name="_method" value="CREATE">
+        -->
         <form action="/../../controller/posts/post-create.php" method="POST">
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">

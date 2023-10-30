@@ -3,15 +3,17 @@
 namespace data;
 use PDO;
 use PDOException;
+use data\Router;
 
-class Database
-{
+class Database{
     public $connection;
     public $statement;
-    public function __construct($config)
-    {
-        $username = "root"; // Tên người dùng MySQL
-        $password = "00Gundam#1416"; // Mật khẩu MySQL
+    //Hàm __construct là hàm tự động khởi tạo khi tạo ra 1 đối tượng của lớp này
+    public function __construct($config){
+        // $username = "root"; // Tên người dùng MySQL
+        // $password = "00Gundam#1416"; // Mật khẩu MySQL
+        $username = "HuyHVQ"; // Tên người dùng MySQL
+        $password = "12345"; // Mật khẩu MySQL
         try {
             // Connect database
             $dsn = 'mysql:' . http_build_query($config, '', ';');
@@ -24,8 +26,7 @@ class Database
         }
     }
 
-    public function query($query, $params = [])
-    {
+    public function query($query, $params = []){
         try {
             // Tạo query
             $this->statement = $this->connection->prepare($query);
@@ -38,23 +39,22 @@ class Database
         }
     }
 
-    public function find()
-    {
+    public function find(){
         return $this->statement->fetch();
     }
 
-    public function findOrFail()
-    {
+    public function findOrFail(){
         $result = $this->find();
-
+        
+        $route = new Router();
         if (!$result) {
-            abort();
+            $route->abort();
         }
         return $result;
     }
 
-    public function get()
-    {
+    public function get(){
         return $this->statement->fetchAll();
     }
 }
+?>
