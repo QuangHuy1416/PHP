@@ -6,9 +6,13 @@
 
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        <!-- 
+        <form action="/../../controller/posts/update.php" method="POST">
         <form action="/post" method="POST">
+        -->
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
             <input type="hidden" name="_method" value="PATCH">
-            <input type="hidden" name="id" value="<?= $post['id'] ?>">
+            <input type="hidden" name="id" value="<?= $post["id"] ?>">
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">

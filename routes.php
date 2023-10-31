@@ -4,7 +4,7 @@
     $routes->get('/cart/','controller/cart.php');
     $routes->get('/post/','controller/posts/post.php');
     $routes->get('/post/edit/','controller/posts/edit.php');
-    $routes->patch('/post/','controller/posts/update.php');
+    $routes->patch('/post/edit/index.php','controller/posts/update.php');
 
     $routes->delete('/post/','controller/posts/detroy.php');
     $routes->create('/post/','controller/posts/post-create.php');

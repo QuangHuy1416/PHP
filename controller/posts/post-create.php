@@ -1,14 +1,13 @@
 <?php
-//require_once __DIR__ . "/../../data/connection.php";
+require_once __DIR__ . "/../../data/connection.php";
 //require_once __DIR__ . "/../../data/App.php";
-require_once __DIR__ . "/../../bootstrap.php";
+//require_once __DIR__ . "/../../bootstrap.php";
 
-use data\App;
-use data\Database;
+// use data\App;
+// use data\Database;
 
-$dbo = App::resolve(Database::class);
+// $dbo = App::resolve(Database::class);
 require_once __DIR__ . "/../../data/validator.php";
-//use data\Validator;
 
 $heading = "Create post";
 $method = $_SERVER['REQUEST_METHOD'] ;
@@ -23,7 +22,8 @@ if( $method === "POST"){
             'post' => $_POST['post'],
             'user_id' => 1
         ]);
-        require_once "post.php";
+        header('location: /post');
+        die;
     } else {
         view("posts/post-create.view.php");
     }
