@@ -29,4 +29,8 @@
         //$posts = $value;
         require_once basePath('view/' . $path);
     }
+
+    function login($email){
+        $_SESSION['user'] = $email;
+    }
 ?>

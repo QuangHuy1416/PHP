@@ -29,9 +29,13 @@ if($user){
     $err['email'] = "Account exist.";
     return view("registration/create.view.php",['err' => $err]);
 } else {
-    $db->query('INSERT INTO users(email, pass) VALUES (:email, :pass)',['email' => $email, 'pass' => $password]);
+    $db->query('INSERT INTO users(email, pass) VALUES (:email, :pass)',[
+        'email' => $email,
+        'pass' => password_hash($password, PASSWORD_BCRYPT) // hàm này dùng để mã hóa $password trước khi insert vào database
+    ]);
 
-    $_SESSION['user'] = $email;
+    login($email);
+    //$_SESSION['user'] = $email;
     header('location: /');
     exit;
 }
