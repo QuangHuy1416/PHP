@@ -10,10 +10,10 @@ class Database{
     public $statement;
     //Hàm __construct là hàm tự động khởi tạo khi tạo ra 1 đối tượng của lớp này
     public function __construct($config){
-        // $username = "root"; // Tên người dùng MySQL
-        // $password = "00Gundam#1416"; // Mật khẩu MySQL
-        $username = "HuyHVQ"; // Tên người dùng MySQL
-        $password = "12345"; // Mật khẩu MySQL
+        $username = "root"; // Tên người dùng MySQL
+        $password = "00Gundam#1416"; // Mật khẩu MySQL
+        // $username = "HuyHVQ"; // Tên người dùng MySQL
+        // $password = "12345"; // Mật khẩu MySQL
         try {
             // Connect database
             $dsn = 'mysql:' . http_build_query($config, '', ';');

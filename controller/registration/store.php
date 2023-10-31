@@ -14,7 +14,7 @@ if(!Validator::email($email)){
 } 
 
 if(!Validator::string($password,7,255)){
-    $err['password'] = "Please provide a passwordof at least seven character.";
+    $err['password'] = "Please provide a password of at least seven character.";
 } 
 
 if(!empty($err)){
