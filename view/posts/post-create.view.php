@@ -1,8 +1,8 @@
 <?php 
-    require_once "../basic/head.php";
-    require_once "../basic/nvar.php";
+    require_once __DIR__ .  "/../basic/head.php";
+    require_once __DIR__ .  "/../basic/nvar.php";
     $heading = 'Create';
-    require_once "../basic/body.php";
+    require_once __DIR__ .  "/../basic/body.php";
 ?>
 
 <main>
@@ -52,4 +52,4 @@
         </form>
     </div>
 </main>
-<?php require_once "../basic/footer.php"; ?>
+<?php require_once __DIR__ .  "/../basic/footer.php"; ?>

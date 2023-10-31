@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "root.php";
 require_once BASE_PATH . "data/functions.php";
 // require_once basePath("data/database.php");

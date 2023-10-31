@@ -14,7 +14,7 @@ $method = $_SERVER['REQUEST_METHOD'] ;
 if( $method === "POST"){
     $err = [];
     
-    if(! Validator::string( $_POST['post'], 1,1000) ){
+    if(!Validator::string( $_POST['post'], 1,1000) ){
         $err['post'] = "A post can not more than 1000 character is required.";
     }
     if(empty($err)){
@@ -25,7 +25,7 @@ if( $method === "POST"){
         header('location: /post');
         die;
     } else {
-        view("posts/post-create.view.php");
+        view("posts/post-create.view.php",['err' => $err]);
     }
 }
 ?>
